@@ -10,6 +10,8 @@ const expenseArrayData = [mockData2020, mockData2021, mockData2022];
 
 /**
  * POST Expense Tracker List.
+ * 
+ * Body { reqYear: request year }
  *
  * @return expense tracker list | empty.
  */
