@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const recipe = require("../data/recipe");
+const recipe = require("../mock/recipe");
 
 /**
  * GET Recipe List.

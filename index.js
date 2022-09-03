@@ -1,16 +1,19 @@
 const express = require("express");
 const app = express();
-const expense = require("./api/expenseTracker");
-const product = require("./api/product");
-const recipe = require("./api/recipe");
+
+const EXPENSE_API = require("./api/expense-api");
+const EXPENSE_MOCK = require("./api/expense-mock");
+const PRODUCT = require("./api/product");
+const RECIPE = require("./api/recipe");
 
 require("dotenv").config();
 
 app.use(express.json({ extended: false }));
 
-app.use("/api/product", product);
-app.use("/api/recipe", recipe);
-app.use("/api/expensebak", expense);
+app.use("/api/product", PRODUCT);
+app.use("/api/recipe", RECIPE);
+app.use("/api/expensebak", EXPENSE_MOCK);
+app.use("/api/expense", EXPENSE_API);
 
 app.get("/", (req, res) => {
   let title = process.env.TITLE;

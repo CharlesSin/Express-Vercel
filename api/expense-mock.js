@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-const mockData2020 = require("../data/2020AccData");
-const mockData2021 = require("../data/2021AccData");
-const mockData2022 = require("../data/2022AccData");
+const mockData2020 = require("../mock/2020AccData");
+const mockData2021 = require("../mock/2021AccData");
+const mockData2022 = require("../mock/2022AccData");
 
 const expenseArray = ["mockData2020", "mockData2021", "mockData2022"];
 const expenseArrayData = [mockData2020, mockData2021, mockData2022];
