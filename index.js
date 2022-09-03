@@ -18,8 +18,7 @@ app.use("/api/expense", EXPENSE_API);
 app.get("/", (req, res) => {
   let title = process.env.TITLE;
   let description = process.env.DESCRIPTION;
-  let environment = process.env;
-  res.status(200).json({ title, description, environment });
+  res.status(200).json({ title, description });
 });
 
 const PORT = process.env.PORT || 8282;
