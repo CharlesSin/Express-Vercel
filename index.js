@@ -15,7 +15,7 @@ app.use("/api/expensebak", expense);
 app.get("/", (req, res) => {
   let title = process.env.TITLE;
   let description = process.env.DESCRIPTION;
-  res.status(200).json({ title, secret });
+  res.status(200).json({ title, description });
 });
 
 const PORT = process.env.PORT || 8282;
