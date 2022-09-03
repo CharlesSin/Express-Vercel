@@ -3,21 +3,14 @@ const admin = require("firebase-admin");
 
 require("dotenv").config();
 
-const keyString = process.env.FIREBASE_PRIVATE_KEY ?? '{"privateKey": ""}'; //Since it's a TypeScript so need to ensure that I pass a valid string to the JSON.parse as FB_ADMIN_PRIVATE_KEY can be undefined
-
-const { privateKey } = JSON.parse(keyString);
-
-if (privateKey === "") {
-  //In case you want to confirm things in Server Logs
-  console.log("FIREBASE_PRIVATE_KEY is not set");
-}
-
 // firebase config.
 const SERVICE_ACCOUNT = {
   type: process.env.FIREBASE_TYPE,
   project_id: process.env.FIREBASE_PROJECT_ID,
   private_key_id: process.env.FIREBASE_PRIVATE_KEY_ID,
-  private_key: privateKey,
+  private_key: process.env.FIREBASE_PRIVATE_KEY
+    ? process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/gm, "\n")
+    : undefined,
   client_email: process.env.FIREBASE_CLIENT_EMAIL,
   client_id: process.env.FIREBASE_CLIENT_ID,
   auth_uri: process.env.FIREBASE_AUTH_URI,
