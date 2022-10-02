@@ -12,7 +12,6 @@ require("dotenv").config();
 const allowlist = [
   "http://127.0.0.1:3000",
   "http://localhost:3000",
-  process.env.EY_EXPENSE_TRACKER_URL,
   process.env.CS_EXPENSE_TRACKER_URL,
 ];
 const corsOptionsDelegate = function (req, callback) {
